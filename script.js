@@ -204,6 +204,24 @@
 // console.log(factorial(10));
 // console.log(factorial(0));
 
+// Recursion(call the function from with in its self) for factorial function
+// arrow function
+// factorial = (n) => {
+//     if (typeof(n) != 'number') return NaN;
+//     if (n < 0) return NaN;
+//     if (n <= 1) return 1;
+//     return n * factorial(n - 1);
+// };
+
+// function factorial(n) {
+//     if (typeof(n) != 'number') return NaN;
+//     if (n < 0) return NaN;
+//     if (n <= 1) return 1;
+//     return n * factorial(n - 1);
+// };
+  
+// factorial(5); // Expected output: 120
+
 // // kebabToSnake
 // function kebabToSnake(str) {
 //     str = str.replace(/-/g, "_");
