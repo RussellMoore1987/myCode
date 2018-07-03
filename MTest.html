@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" href="MTset.css">
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <div>
+                <img src="https://mooredigitalsolutions.com/wp-content/uploads/2017/10/logo-03.png" class="logo" alt="">
+            </div>
+            <div class="headerLinks">
+                <ul class="menu">
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="">Latest Projects</a>
+                    </li>
+                    <li>
+                        <a href="">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="text-center">
+        <h1>RGB Color Guessing Game!</h1>
+        <p id="mainRGB">RGB(255, 0, 0)</p>
+        <p id="message">&nbsp;</p>
+        <div class="container">
+            <div class="squareContainer">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square" style="display: none;"></div>
+                <div class="square" style="display: none;"></div>
+                <div class="square" style="display: none;"></div>
+            </div>
+            <div class="options">
+                <div>
+                    <button id="reset" class="waves-effect waves-light btn">New Colors</button>
+                </div>
+                <div>
+                    <button class="mode waves-effect waves-light btn">Easy</button>
+                    <button class="mode selected waves-effect waves-light btn">Hard</button>
+                    <button class="mode waves-effect waves-light btn">Extra Hard</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="MTest.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+
+</html>
