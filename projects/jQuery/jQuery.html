@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jQuery Demo</h1>
+    <!-- html 1 -->
+    <ul>
+        <li>Newt</li>
+        <li>Howler Monkey</li>
+        <li>Pine Marten</li>
+    </ul>
+    <img src="http://cdn.discoverwildlife.com/sites/default/files/imagecache/623px_wide/main/PMarten%20main.jpg" alt="">
+    <img src="https://source.unsplash.com/random/150x150" alt="">
+    <img src="https://source.unsplash.com/random/150x150" alt="">
+    <img src="https://source.unsplash.com/random/150x150" alt="">
+    <input type="text">
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+    <div>Div 4</div>
+    <button>Click Me</button>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        // html 1
+        // adding styles based on open object
+        let styles = {
+            color: "purple",
+            backgroundColor: "pink",
+            fontWeight: "bold"
+        };
+
+        $("li").css(styles);
+        // select only the first div 
+        $("div:first-of-type").css("color", "purple");
+
+        // img get width
+        console.log($("img:first-of-type").css("width"));
+        $("img:first-of-type").css("width", "150px");
+        // get src
+        console.log($("img:first-of-type").attr("src"));
+        // Attribute object
+        $("img:first-of-type").attr({
+            src: "https://www.jaguarcreek.org/wp-content/uploads/2017/05/Screenshot-2017-05-08-13.48.38.png",
+            alt: "hahahahahaha!!!"
+        });
+        // change last img
+        $("img").last().attr({
+            src: "https://www.jaguarcreek.org/wp-content/uploads/2017/05/Screenshot-2017-05-08-13.48.38.png",
+            alt: "hahahahahaha!!!"
+        });
+        // get src
+        console.log($("img:first-of-type").attr("src"));
+
+        // keypress
+        $("input").keypress(function (event) {
+            if (event.which === 13) {
+                alert("You hit enter!!!")    
+            }    
+        });
+
+        // **** click() and on("click") are different the on("click") will set listeners for potential future elements where the click() does not ****
+
+        // fade out and remove
+        $("button").on("click", function () {
+            $("img").fadeOut("slow", function () {
+                $("img").remove();
+            });
+        });
+
+        // fade toggle is cool
+        
+    </script>
+</body>
+</html>

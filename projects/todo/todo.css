@@ -1,0 +1,114 @@
+/* 
+----------------------------------------------------- 
+Tags
+-----------------------------------------------------
+*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+    background-color: #2980b9;
+    color: white;
+    margin: 0px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    background-color: #ffffff;
+    height: 40px; 
+    line-height: 40px;
+    color: #666;
+    cursor: pointer;
+}
+
+li:nth-child(2n) {
+    background-color: #f7f7f7; 
+}
+
+li:hover span {
+    width: 40px; 
+    opacity: 1.0;
+}
+
+span {
+    background-color: #e74c3c;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    width: 0px;
+    display: inline-block;
+    transition: 250ms linear;
+    opacity: 0;
+}
+
+input {
+    font-size: 18px;
+    background-color: #f7f7f7;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    color: #2980b9;
+    border: 3px solid rgba(0, 0, 0, 0);
+    display: none;
+    /* help make objects fit, does not include margin */
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+input:focus {
+    background-color: #ffffff;
+    border: 3px solid #2980b9;
+    outline: none; 
+}
+
+/* 
+----------------------------------------------------- 
+id's
+-----------------------------------------------------
+*/
+
+#container {
+    max-width: 400px;
+    min-width: 300px;
+    margin: 100px auto; 
+    background-color: #f7f7f7;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+----------------------------------------------------- 
+Classes
+-----------------------------------------------------
+*/
+
+.fa-plus {
+    float: right;
+    cursor: pointer;
+    transition: 250ms linear;
+}
+
+.done{
+    color: #bbbbbb;
+    text-decoration: line-through;
+}
+
+.turn {
+    transform: rotate(135deg);
+}

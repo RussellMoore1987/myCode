@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="padatap.css">
+    <script type="text/javascript" src="paperjs-v0.11.5/dist/paper-full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.13/howler.min.js"></script>
+    <!-- change paperscript to javascript to see syntax highlighting -->
+    <script type="text/paperscript" canvas="myCanvas">
+        // Dataset
+        var keyData = {
+            q: {
+                sound: new Howl({
+                  src: ['sounds/sounds/bubbles.mp3']
+                }),
+                color: '#1abc9c',
+                type: "triangle1"
+            },
+            w: {
+                sound: new Howl({
+                  src: ['sounds/sounds/clay.mp3']
+                }),
+                color: '#2ecc71',
+                type: "polygon1"
+            },
+            e: {
+                sound: new Howl({
+                  src: ['sounds/sounds/confetti.mp3']
+                }),
+                color: '#3498db',
+                type: "circle1"
+            },
+            r: {
+                sound: new Howl({
+                  src: ['sounds/sounds/corona.mp3']
+                }),
+                color: '#9b59b6',
+                type: "triangle2"
+            },
+                t: {
+                sound: new Howl({
+                  src: ['sounds/sounds/dotted-spiral.mp3']
+                }),
+                color: '#34495e',
+                type: "polygon2"
+            },
+            y: {
+                sound: new Howl({
+                  src: ['sounds/sounds/flash-1.mp3']
+                }),
+                color: '#16a085',
+                type: "circle2"
+            },
+            u: {
+                sound: new Howl({
+                  src: ['sounds/sounds/flash-2.mp3']
+                }),
+                color: '#27ae60',
+                type: "triangle3"
+            },
+            i: {
+                sound: new Howl({
+                  src: ['sounds/sounds/flash-3.mp3']
+                }),
+                color: '#2980b9',
+                type: "polygon3"
+            },
+            o: {
+                sound: new Howl({
+                    src: ['sounds/sounds/glimmer.mp3']
+                }),
+                color: '#8e44ad',
+                type: "circle3"
+            },
+            p: {
+                sound: new Howl({
+                  src: ['sounds/sounds/moon.mp3']
+                }),
+                color: '#2c3e50',
+                type: "triangle1"
+            },
+            a: {
+                sound: new Howl({
+                  src: ['sounds/sounds/pinwheel.mp3']
+                }),
+                color: '#f1c40f',
+                type: "polygon1"
+            },
+            s: {
+                sound: new Howl({
+                  src: ['sounds/sounds/piston-1.mp3']
+                }),
+                color: '#e67e22',
+                type: "circle3"
+            },
+                d: {
+                sound: new Howl({
+                  src: ['sounds/sounds/piston-2.mp3']
+                }),
+                color: '#e74c3c',
+                type: "triangle3"
+            },
+            f: {
+                sound: new Howl({
+                  src: ['sounds/sounds/prism-1.mp3']
+                }),
+                color: '#95a5a6',
+                type: "polygon3"
+            },
+            g: {
+                sound: new Howl({
+                  src: ['sounds/sounds/prism-2.mp3']
+                }),
+                color: '#f39c12',
+                type: "circle2"
+            },
+            h: {
+                sound: new Howl({
+                  src: ['sounds/sounds/prism-3.mp3']
+                }),
+                color: '#d35400',
+                type: "triangle2"
+            },
+            j: {
+                sound: new Howl({
+                  src: ['sounds/sounds/splits.mp3']
+                }),
+                color: '#1abc9c',
+                type: "polygon2"
+            },
+            k: {
+                sound: new Howl({
+                  src: ['sounds/sounds/squiggle.mp3']
+                }),
+                color: '#2ecc71',
+                type: "circle3"
+            },
+            l: {
+                sound: new Howl({
+                  src: ['sounds/sounds/strike.mp3']
+                }),
+                color: '#3498db',
+                type: "triangle3"
+            },
+            z: {
+                sound: new Howl({
+                  src: ['sounds/sounds/suspension.mp3']
+                }),
+                color: '#9b59b6',
+                type: "polygon3"
+            },
+            x: {
+                sound: new Howl({
+                  src: ['sounds/sounds/timer.mp3']
+                }),
+                color: '#34495e',
+                type: "circle2"
+            },
+            c: {
+                sound: new Howl({
+                  src: ['sounds/sounds/ufo.mp3']
+                }),
+                color: '#16a085',
+                type: "triangle2"
+            },
+            v: {
+                sound: new Howl({
+                  src: ['sounds/sounds/veil.mp3']
+                }),
+                color: '#27ae60',
+                type: "polygon2"
+            },
+            b: {
+                sound: new Howl({
+                  src: ['sounds/sounds/wipe.mp3']
+                }),
+                color: '#2980b9',
+                type: "circle1"
+            },
+            n: {
+                sound: new Howl({
+                    src: ['sounds/sounds/zig-zag.mp3']
+                }),
+                color: '#8e44ad',
+                type: "triangle1"
+            },
+            m: {
+                sound: new Howl({
+                  src: ['sounds/sounds/moon.mp3']
+                }),
+                color: '#2c3e50',
+                type: "polygon1"
+            }
+        }
+        //Create empty Array
+        var shapes = [];
+        // When they press a key, perform
+        function onKeyDown(event) {
+            // Make sure were pressing a valid key
+            if (keyData[event.key]) {
+                // Find max point
+                var maxPoint = new Point(view.size.width, view.size.height);
+                // select a random point
+                var randomPoint = Point.random();
+                // Combined random point with Max point to get a truly random location
+                var point = maxPoint * randomPoint;
+                // See what shape we are sending through
+                switch (keyData[event.key].type) {
+                    case "circle1": var newShape = new Path.Circle(point, 500); break;
+                    case "polygon1": var newShape = new Path.RegularPolygon(point, 5, 500); break;
+                    case "triangle1": var newShape = new Path.RegularPolygon(point, 3, 500); break;
+                    case "circle2": var newShape = new Path.Circle(point, 600); break;
+                    case "polygon2": var newShape = new Path.RegularPolygon(point, 7, 600); break;
+                    case "triangle2": var newShape = new Path.RegularPolygon(point, 3, 700); break;
+                    case "circle3": var newShape = new Path.Circle(point, 700); break;
+                    case "polygon3": var newShape = new Path.RegularPolygon(point, 8, 700); break;
+                    case "triangle3": var newShape = new Path.RegularPolygon(point, 3, 600); break;
+                    default: var newShape = new Path.Circle(point, 500); break;
+                }
+                // Add color
+                newShape.fillColor = keyData[event.key].color;
+                // Play sound
+                keyData[event.key].sound.play();
+                // Add to array for animation
+                shapes.push(newShape);
+            } 
+        }
+        // Animations
+        function onFrame(event) {
+            for (var i = 0; i < shapes.length; i++) {
+                // Change color
+                shapes[i].fillColor.hue += 1; 
+                // Change size   
+                shapes[i].scale(.9);
+                // Rotate
+                shapes[i].rotate(3);
+                // Remove once too small to see
+                if(shapes[i].area < 1){
+                    shapes[i].remove(); // remove the circle from the canvas
+                    shapes.splice(i, 1); // remove the circle from the array
+                    i--; // decrement i so that the loop doesn't skip a circle because of .splice()
+                    // console.log(shapes);
+                }    
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>
