@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="todo.css">
+    <style>
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <section id="galleries">
+        <div class="container">
+            <div class="row">
+                <div class="grid-4">
+                    <a class="soso" href="#gallery-img" role="button" data-toggle="modal" data-target="#gallery-img">
+                        <div>
+                            <img src="https://i.pinimg.com/originals/38/ec/69/38ec69f3f23df1c1e501a33c2bace5e5.png" alt="">
+                            <div class="overlay">
+                                <div>
+                                    <h4>Jason Peterson</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="soso" href="#gallery-img" role="button" data-toggle="modal" data-target="#gallery-img">
+                        <div>
+                            <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/10/I-spent-the-summer-drawing-150-pieces-of-Monster-Art-based-on-designs-submitted-by-kids-59d1fa0f086cb__880.jpg" alt="">
+                            <div class="overlay">
+                                <div>
+                                    <h4>Jason Peterson</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="soso" href="#gallery-img" role="button" data-toggle="modal" data-target="#gallery-img">
+                        <div>
+                            <img src="https://i.pinimg.com/originals/38/ec/69/38ec69f3f23df1c1e501a33c2bace5e5.png" alt="">
+                            <div class="overlay">
+                                <div>
+                                    <h4>Jason Peterson</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="soso" href="#gallery-img" role="button" data-toggle="modal" data-target="#gallery-img">
+                        <div>
+                            <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/10/I-spent-the-summer-drawing-150-pieces-of-Monster-Art-based-on-designs-submitted-by-kids-59d1fa0f086cb__880.jpg" alt="">
+                            <div class="overlay">
+                                <div>
+                                    <h4>Jason Peterson</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a  class="soso" href="#gallery-img" role="button" data-toggle="modal" data-target="#gallery-img">
+                        <div>
+                            <img src="https://i.pinimg.com/originals/38/ec/69/38ec69f3f23df1c1e501a33c2bace5e5.png" alt="">
+                            <div class="overlay">
+                                <div>
+                                    <h4>Jason Peterson</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="soso" href="#gallery-img" role="button" data-toggle="modal" data-target="#gallery-img">
+                        <div>
+                            <img src="https://vignette.wikia.nocookie.net/monster-legends-competitive/images/7/7e/Valgar_the_Pure.jpg/revision/latest?cb=20161228005957&path-prefix=fr" alt="">
+                            <div class="overlay">
+                                <div>
+                                    <h4>Jason Peterson</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script>
+        $(".grid-4 a").on("click", function () {
+            console.log($(this).find("img").attr("src"));
+        });
+    </script>
+</body>
+</html>

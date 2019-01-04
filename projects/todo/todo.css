@@ -3,14 +3,16 @@
 Tags
 -----------------------------------------------------
 */
-
 body {
     padding: 0px;
     margin: 0px;
     font-family: 'Roboto', sans-serif;
-    background: #24C6DC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #24C6DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 h1 {
@@ -31,18 +33,18 @@ ul {
 
 li {
     background-color: #ffffff;
-    height: 40px; 
+    height: 40px;
     line-height: 40px;
     color: #666;
     cursor: pointer;
 }
 
 li:nth-child(2n) {
-    background-color: #f7f7f7; 
+    background-color: #f7f7f7;
 }
 
 li:hover span {
-    width: 40px; 
+    width: 40px;
     opacity: 1.0;
 }
 
@@ -67,7 +69,7 @@ input {
     border: 3px solid rgba(0, 0, 0, 0);
     display: none;
     /* help make objects fit, does not include margin */
-    box-sizing: border-box; 
+    box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
@@ -75,7 +77,7 @@ input {
 input:focus {
     background-color: #ffffff;
     border: 3px solid #2980b9;
-    outline: none; 
+    outline: none;
 }
 
 /* 
@@ -83,11 +85,10 @@ input:focus {
 id's
 -----------------------------------------------------
 */
-
 #container {
     max-width: 400px;
     min-width: 300px;
-    margin: 100px auto; 
+    margin: 100px auto;
     background-color: #f7f7f7;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
@@ -97,14 +98,13 @@ id's
 Classes
 -----------------------------------------------------
 */
-
 .fa-plus {
     float: right;
     cursor: pointer;
     transition: 250ms linear;
 }
 
-.done{
+.done {
     color: #bbbbbb;
     text-decoration: line-through;
 }

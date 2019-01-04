@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <style>
+        .benefits {
+            padding: 30px 0px;
+            display: grid;
+            grid-template-columns: repeat(3, 30%);
+            justify-content: center;
+            grid-gap: 1.5rem;
+        }
+
+        .benefits>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefits>div>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits>div>div:nth-child(odd) {
+            width: 25%;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+
+        .benefits>div>div:nth-child(even) {
+            width: 75%;
+            justify-content: flex-start;
+        }
+
+
+        .benefits i {
+            font-size: 45px;
+        }
+
+        @media (max-width: 960px) {
+            .benefits {
+                grid-template-columns: repeat(2, 45%);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .benefits {
+                grid-template-columns: 90%;
+            }
+
+            .benefits>div>div:nth-child(odd) {
+                width: 20%;
+            }
+
+            .benefits>div>div:nth-child(even) {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="benefits">
+        <div>
+            <div>
+                <i class="fas fa-truck"></i>
+            </div>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit Placeat.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <i class="fas fa-truck"></i>
+            </div>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit Placeat.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <i class="fas fa-truck"></i>
+            </div>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit Placeat.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

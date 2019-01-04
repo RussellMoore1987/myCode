@@ -1,0 +1,223 @@
+/* 
+----------------------------------------------------- 
+Main
+----------------------------------------------------- 
+*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+section {
+    padding: 30px 0px 45px 0px;
+}
+
+.gray_bg {
+    background-color: #f2f2f2;
+}
+
+.border_shift {
+    position: relative;
+    margin: 10px;
+}
+
+.border_shift>div {
+    position: absolute;
+    top: 0;
+    width: 99.5%;
+    height: 98.5%;
+    border: 2px solid #7cb7e8;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+}
+
+.border_shift:hover>div {
+    opacity: 1;
+    transform: translate(10px, 8px);
+}
+
+hr.style2 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(99, 99, 99, 0), rgba(99, 99, 99, 0.75), rgba(99, 99, 99, 0));
+}
+
+.section_title {
+    position: relative;
+    padding-top: 5px;
+    margin: 20px 0px 30px 0px;
+}
+
+.section_title div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.section_title h1,
+.section_title h2,
+.section_title h3 {
+    display: inline-block;
+    margin: 0px;
+    background-color: #fff;
+    padding: 0px 15px;
+}
+
+section.gray_bg .section_title h1,
+section.gray_bg .section_title h2,
+section.gray_bg .section_title h3 {
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+
+.item_card {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in-out;
+}
+
+.item_card:hover {
+    background-color: #e4e2e2;
+}
+
+.item_card>img {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.item_card>h4,
+.item_card>p {
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
+}
+
+.grid_4_md {
+    /* margin: 20px; */
+    display: grid;
+    grid-template-columns: repeat(4, 23%);
+    justify-content: center;
+    grid-gap: 1.5rem;
+}
+
+
+@media (max-width: 960px) {
+    .grid_4_md {
+        grid-template-columns: repeat(2, 45%);
+    }
+}
+
+@media (max-width: 530px) {
+    .grid_4_md {
+        grid-template-columns: 90%;
+    }
+}
+
+/* 
+----------------------------------------------------- 
+Header
+----------------------------------------------------- 
+*/
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+}
+
+header .logo {
+    width: 300px;
+}
+
+.headerContainer {
+    margin: auto;
+    padding: 20px 20px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerContainer ul,
+.headerContainer li {
+    display: inline-block;
+}
+
+.headerContainer li {
+    margin-left: 10px;
+}
+
+/* 
+----------------------------------------------------- 
+Banner
+----------------------------------------------------- 
+*/
+
+.banner {
+    height: 400px;
+    background-image: url(Image/easter-eggs-1242803_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 60px;
+}
+
+/* 
+----------------------------------------------------- 
+Home page
+----------------------------------------------------- 
+*/
+
+.main_display {
+    display: flex;
+}
+
+.main_display img {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main_display .main_display_left {
+    width: 60%;
+}
+
+.main_display .main_display_right {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main_display .main_display_right>div {
+    width: 50%;
+}
+
+.main_display .main_display_right div:nth-of-type(3) {
+    width: 100%;
+}
+
+@media (max-width: 860px) {
+    .main_display .main_display_left {
+        width: 90%;
+    }
+
+    .main_display .main_display_right {
+        width: 90%;
+    }
+
+    .main_display {
+        flex-direction: column;
+        align-items: center;
+    }
+}

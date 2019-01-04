@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main_box {
+            position: relative;
+            width: 80%;
+            height: calc(100vh - 500px);
+            max-width: 400px;
+            max-height: 800px;
+            min-height: 100px;
+            border: 1px solid black;
+        }
+
+        .box1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 35px;
+            width: 35px;
+            background-color: blueviolet;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 35px;
+            width: 35px;
+            background-color: greenyellow;
+        }
+        
+        .box3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 35px;
+            width: 35px;
+            background-color: hotpink;
+        }
+
+        .box4 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 35px;
+            width: 35px;
+            background-color: maroon;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body {
+    background-image: url(images/skyline-839795_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body > div {
+    background-image: linear-gradient(to right, rgba(4, 0, 255, 0.4), rgba(255, 0, 128, 0.4));
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.container > div {
+    min-height: 100vh;
+}
+
+.flex-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+    grid-gap: 1rem;   
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(255,255,255,0) 0%, rgb(250, 255, 255) 51%, #FFF 100%);
+    border-radius: 30px;
+}
+
+.card .card-view-profile {
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+
+}
+
+.card .card-banner {
+    position: relative;
+}
+
+.card .card-img {
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.card .card-profile {
+    width: 120px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -40px;
+    background-color: #ffffff;
+    z-index: 20;
+}
+
+.card-body {
+    position: relative;
+    background-color: #ffffff;
+    padding: 50px 30px 30px;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.card-body .card-wave {
+    position: absolute;
+    top: -50px;
+    left: 0;
+}
+
+.card-body .card-wave img {
+    width: 370px;
+}
+
+.card-body h2 {
+    margin: 5px 0px 10px;
+    font-size: 30px;
+}
+
+.card-body .card-email {
+    margin: 0px;
+    font-size: 12px;
+}
+
+.card-body .card-social-icons {
+    margin: 20px 0px;
+    font-size: 25px;
+}
+
+.card-body .card-social-icons i {
+   padding: 0px 7px;
+}
+
+.card-body .card-description {
+    margin: 30px 0px 55px;
+}
+
+.gradient-button {
+    position: relative;
+    border: unset;
+    background-image: linear-gradient(to right, #FF6E01 0%, rgb(250, 0, 0) 51%, #FF6E01 100%);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0px 4px 20px rgba(34, 34, 34, 0.28);
+}
+
+.gradient-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  transform: translateY(5px);
+  box-shadow: 0px 4px 20px rgba(34, 34, 34, 0);
+}
+
+@media (max-width: 1100px) {
+    .grid {
+        grid-template-columns: repeat(2, 47%);
+    }
+
+    .card-body .card-wave img {
+        width: 520px;
+    }
+
+    .card-body .card-wave {
+        position: absolute;
+        top: -60px;
+        left: 0;
+    }
+
+    body > div {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 860px) {
+    .card-body .card-wave img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 720px) {
+    .grid {
+        grid-template-columns: 80%;
+    }
+
+    .card-body .card-wave img {
+        width: 660px;
+    }
+
+    .card-body .card-wave {
+        position: absolute;
+        top: -65px;
+        left: 0;
+    }
+
+    body > div {
+        padding: 40px 0px;
+    }
+}
+
+@media (max-width: 450px) {
+    .card-body .card-wave img {
+        width: 450px;
+    }
+
+    .grid {
+        grid-template-columns: 90%;
+    }
+}

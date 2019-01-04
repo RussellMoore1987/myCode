@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .boxImg{
+            width: 100%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .imgContainer{
+            position: relative;
+            width: 30%;
+            margin: 0px;
+            color: #ffffff;
+        }
+
+        .description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8));
+            width: 100%;
+            height: 99%;
+            opacity: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: all 1s ease-in-out;
+        }
+
+        .title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6));
+            width: 100%;
+            height: 99%;
+            opacity: 1;
+            text-align: center;
+            transition: all 1s ease-in-out;
+        }
+
+        .title h3 {
+            position: absolute;
+            width: 100%;
+            bottom: 5px;
+            
+        }
+
+        .imgContainer:hover .title {
+            opacity: 0;
+        }
+
+        .imgContainer:hover .description {
+            opacity: 1;
+        }
+
+        .container {
+        margin: 20px;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+/* ---------------------------------------- */
+/* card media query */
+/* ---------------------------------------- */
+
+@media (max-width: 960px) { 
+  .personContainer {
+    grid-template-columns: repeat(2, 45%);
+  }   
+}
+
+@media (max-width: 760px) { 
+  .personContainer {
+    grid-template-columns: 100%;
+  }   
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="imgContainer">
+                <img class="boxImg" src="https://i0.wp.com/mooredigitalsolutions.com/wp-content/uploads/2018/03/php_cms_featured_image.jpg?fit=1024%2C852&ssl=1" alt="">
+                <div class="title">
+                    <h3>Title Here</h3>
+                </div>
+                <div class="description">
+                    <h4>Title Here</h4>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, velit iste quos perferendis itaque possimus facere tempora rem ducimus esse sunt obcaecati? </p>
+                    <button>click me</button>
+                </div>
+            </div>
+            <div class="imgContainer">
+                <img class="boxImg" src="https://i0.wp.com/mooredigitalsolutions.com/wp-content/uploads/2018/03/php_cms_featured_image.jpg?fit=1024%2C852&ssl=1" alt="">
+                <div class="title">
+                    <h3>Title Here</h3>
+                </div>
+                <div class="description">
+                    <h4>Title Here</h4>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, velit iste quos perferendis itaque possimus facere tempora rem ducimus esse sunt obcaecati? </p>
+                    <button>click me</button>
+                </div>
+            </div>
+            <div class="imgContainer">
+                <img class="boxImg" src="https://i0.wp.com/mooredigitalsolutions.com/wp-content/uploads/2018/03/php_cms_featured_image.jpg?fit=1024%2C852&ssl=1" alt="">
+                <div class="title">
+                    <h3>Title Here</h3>
+                </div>
+                <div class="description">
+                    <h4>Title Here</h4>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, velit iste quos perferendis itaque possimus facere tempora rem ducimus esse sunt obcaecati? </p>
+                    <button>click me</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="imgContainer">
+                <img class="boxImg" src="https://i0.wp.com/mooredigitalsolutions.com/wp-content/uploads/2018/03/php_cms_featured_image.jpg?fit=1024%2C852&ssl=1" alt="">
+                <div class="title">
+                    <h3>Title Here</h3>
+                </div>
+                <div class="description">
+                    <h4>Title Here</h4>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, velit iste quos perferendis itaque possimus facere tempora rem ducimus esse sunt obcaecati? </p>
+                    <button>click me</button>
+                </div>
+            </div>
+            <div class="imgContainer">
+                <img class="boxImg" src="https://i0.wp.com/mooredigitalsolutions.com/wp-content/uploads/2018/03/php_cms_featured_image.jpg?fit=1024%2C852&ssl=1" alt="">
+                <div class="title">
+                    <h3>Title Here</h3>
+                </div>
+                <div class="description">
+                    <h4>Title Here</h4>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, velit iste quos perferendis itaque possimus facere tempora rem ducimus esse sunt obcaecati? </p>
+                    <button>click me</button>
+                </div>
+            </div>
+            <div class="imgContainer">
+                <img class="boxImg" src="https://i0.wp.com/mooredigitalsolutions.com/wp-content/uploads/2018/03/php_cms_featured_image.jpg?fit=1024%2C852&ssl=1" alt="">
+                <div class="title">
+                    <h3>Title Here</h3>
+                </div>
+                <div class="description">
+                    <h4>Title Here</h4>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, velit iste quos perferendis itaque possimus facere tempora rem ducimus esse sunt obcaecati? </p>
+                    <button>click me</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>fkjsdhlkfhjkhsdjlkfjkhsjdh fksdhkjfhkhsdk;f kjdhsfkjhdkjhgkjhkjdfshhgk</p>
+        </div>
+    </div>
+</body>
+</html>

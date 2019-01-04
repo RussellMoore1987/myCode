@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            position: relative;
+            min-width: 66%;
+            max-width: 800px;
+            height: 400px;
+            border: 2px solid black;
+        }
+
+        .box {
+            position: absolute;
+            top: 0;
+            right: 70%;
+            height: 100%;
+            width: 30%;
+            background-color: green;
+            transition: all 1s ease-in-out;
+        }
+
+        /* .box:hover {
+            right: 0;
+            height: 33%;
+            width: 30%;
+            background-color: red;
+        } */
+
+        .box2 {
+            right: 0;
+            height: 33%;
+            width: 30%;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <button>Click Me</button>
+
+    <script>
+        let box = document.querySelector(".box")
+        document.querySelector("button").addEventListener("click", function () {
+            box.classList.toggle("box2");
+            // console.log("got it");
+            console.log(box);
+        }) 
+    </script>
+</body>
+
+</html>
