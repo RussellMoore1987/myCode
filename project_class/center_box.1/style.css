@@ -1,0 +1,49 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    position: absolute;
+    border: 1px solid #202020;
+    max-width: 500px;
+    min-width: 200px;
+    width: 80%;
+    max-height: 500px;
+    min-height: 100px;
+    height: 80%;
+}
+
+.box div {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+}
+
+.box :nth-child(1) {
+    top: 0;
+    left: 0;
+    background-color: blue;
+}
+
+.box :nth-child(2) {
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 1, 179);
+}
+
+.box :nth-child(3) {
+    bottom: 0;
+    left: 0;
+    background-color: rgb(4, 250, 25);
+}
+
+.box :nth-child(4) {
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0, 238, 255);
+}

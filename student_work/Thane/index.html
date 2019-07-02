@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    
+      #parallax-container {
+        /* This height can be adjusted here and below */
+        height: 750px;
+      }
+
+      #parallax-container div {
+        position: fixed;
+        top: 0;
+        background-position: center;
+        transform: translateY(0px);
+        /* Keep this the same height as above */
+        width: 100%;
+        height: 750px;
+        background-repeat: no-repeat;
+      }
+
+      .space {
+        display: block;
+        height: 2000px;
+        width: 100%;
+        /* position: relative; */
+        background-color: white;
+        position: relative;
+      }
+
+      .one {
+          background-image: url('parrallax-layer-1.png');
+          background-size: cover;
+      }
+
+      .two {
+        background-image: url('parrallax-layer-2.png');
+        background-size: cover;
+      }
+
+      .three {
+        background-image: url('parrallax-layer-3.png');
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="parallax-container">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+      <!-- Continue to add any other layer images -->
+    </div>
+    <div class="space"></div>
+
+  </body>
+  <script>
+    window.addEventListener('scroll', () => {
+      let parent = document.getElementById('parallax-container');
+      let children = parent.getElementsByTagName('div');
+      for(let i = 0; i < children.length; i++) {
+        children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
+      }
+    }, false)
+  </script>
+</html>

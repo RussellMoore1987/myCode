@@ -1,0 +1,46 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    height: 400px;
+    width: 400px;
+    border: 1px solid #d4d4d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small_box {
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+.small_box:nth-of-type(1) {
+    background-color: blue;
+}
+
+.small_box:nth-of-type(2) {
+    background-color: rgb(248, 6, 208);
+}
+
+.small_box:nth-of-type(3) {
+    background-color: rgb(223, 11, 11);
+}
+
+
+.small_box:nth-of-type(1)::after {
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: rgb(5, 197, 255);
+}

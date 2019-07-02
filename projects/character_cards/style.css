@@ -94,12 +94,7 @@ body {
 }
 
 .card-level.card-level-50 > div:nth-of-type(1){
-    position: absolute;
-    left: 50%;
     bottom: 0;
-    background-color: #ff931d;
-    width: 100px;
-    height: 100px;
 }
 
 .card-level.card-level-75 > div:nth-of-type(1){
