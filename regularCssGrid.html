@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .card {
+            
+            padding: 15px;
+            background-color: blueviolet;
+            color: #ffffff;
+        }
+
+        .dashboard-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dashboard {
+            position: relative;
+            max-height: 90%;
+            height: 90%;
+            min-height: 500px;
+            max-width: 1300px;
+            width: 80%;
+            border-radius: 20px;
+            background-color: darkgray;
+        }
+
+        /* grid ////////////////////////////////////////////////////////// */
+        .container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 8.33%);
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .container.dense {
+            grid-auto-flow: row dense;
+        }
+
+        .container > * {
+            margin: 5px;
+        }
+
+        .spanSpacer {
+            margin: 0px;
+        }
+
+        /* span rows */
+        .rowSpan1 {
+            grid-row: span 1;
+        }
+        .rowSpan2 {
+            grid-row: span 2;
+        }
+        .rowSpan3 {
+            grid-row: span 3;
+        }
+        .rowSpan4 {
+            grid-row: span 4;
+        }
+        .rowSpan5 {
+            grid-row: span 5;
+        }
+        .rowSpan6 {
+            grid-row: span 6;
+        }
+        .rowSpan7 {
+            grid-row: span 7;
+        }
+        .rowSpan8 {
+            grid-row: span 8;
+        }
+        .rowSpan9 {
+            grid-row: span 9;
+        }
+        .rowSpan10 {
+            grid-row: span 10;
+        }
+        .rowSpan11 {
+            grid-row: span 11;
+        }
+        .rowSpan12 {
+            grid-row: span 12;
+        }
+
+        /* column spans */
+        .span12, .spanXl12, .spanLg12, .spanMd12, .spanSm12, .spanXs12 {
+            grid-column: span 12;
+        }
+
+        .span11, .spanXl11, .spanLg11, .spanMd11, .spanSm11, .spanXs11 {
+            grid-column: span 11;
+        }
+
+        .span10, .spanXl10, .spanLg10, .spanMd10, .spanSm10, .spanXs10 {
+            grid-column: span 10;
+        }
+
+        .span9, .spanXl9, .spanLg9, .spanMd9, .spanSm9, .spanXs9 {
+            grid-column: span 9;
+        }
+
+        .span8, .spanXl8, .spanLg8, .spanMd8, .spanSm8, .spanXs8 {
+            grid-column: span 8;
+        }
+
+        .span7, .spanXl7, .spanLg7, .spanMd7, .spanSm7, .spanXs7 {
+            grid-column: span 7;
+        }
+
+        .span6, .spanXl6, .spanLg6, .spanMd6, .spanSm6, .spanXs6 {
+            grid-column: span 6;
+        }
+
+        .span5, .spanXl5, .spanLg5, .spanMd5, .spanSm5, .spanXs5 {
+            grid-column: span 5;
+        }
+
+        .span4, .spanXl4, .spanLg4, .spanMd4, .spanSm4, .spanXs4 {
+            grid-column: span 4;
+        }
+
+        .span3, .spanXl3, .spanLg3, .spanMd3, .spanSm3, .spanXs3 {
+            grid-column: span 3;
+        }
+
+        .span2, .spanXl2, .spanLg2, .spanMd2, .spanSm2, .spanXs2 {
+            grid-column: span 2;
+        }
+
+        .span1, .spanXl1, .spanLg1, .spanMd1, .spanSm1, .spanXs1 {
+            grid-column: span 1;
+        }
+        /* fullWidth */
+        /* grid full span breaking points */
+        @media screen and (max-width: 1300px) {
+            .spanXl11, .spanXl10, .spanXl9, .spanXl8, .spanXl7, .spanXl6, .spanXl5, .spanXl4, .spanXl3, .spanXl2, .spanXl1 {
+                grid-column: span 12;
+            }    
+        }
+        @media screen and (max-width: 1100px) {
+            .spanLg11, .spanLg10, .spanLg9, .spanLg8, .spanLg7, .spanLg6, .spanLg5, .spanLg4, .spanLg3, .spanLg2, .spanLg1 {
+                grid-column: span 12;
+            }     
+        }
+        @media screen and (max-width: 960px) {
+            .span11, .spanMd11, .span10, .spanMd10, .span9, .spanMd9, .span8, .spanMd8, .span7, .spanMd7, .span6, .spanMd6, .span5, .spanMd5, .span4, .spanMd4, .span3, .spanMd3, .span2, .spanMd2, .span1, .spanMd1 {
+                grid-column: span 12;
+            }     
+        }
+        @media screen and (max-width: 760px) {
+            .spanSm11, .spanSm10, .spanSm9, .spanSm8, .spanSm7, .spanSm6, .spanSm5, .spanSm4, .spanSm3, .spanSm2, .spanSm1 {
+                grid-column: span 12;
+            }     
+        }
+        
+        /* this section allows you to have multiple classes and for one to be able to override the others */
+        /* Xl */
+        @media screen and (min-width: 1300px) { 
+            .spanXs11 {
+                grid-column: span 11;
+            }
+            .spanXs10 {
+                grid-column: span 10;
+            }
+            .spanXs9 {
+                grid-column: span 9;
+            }
+            .spanXs8 {
+                grid-column: span 8;
+            }
+            .spanXs7 {
+                grid-column: span 7;
+            }
+            .spanXs6 {
+                grid-column: span 6;
+            }
+            .spanXs5 {
+                grid-column: span 5;
+            }
+            .spanXs4 {
+                grid-column: span 4;
+            }
+            .spanXs3 {
+                grid-column: span 3;
+            }
+            .spanXs2 {
+                grid-column: span 2;
+            }
+            .spanXs1 {
+                grid-column: span 1;
+            }
+            .spanSm11 {
+                grid-column: span 11;
+            }
+            .spanSm10 {
+                grid-column: span 10;
+            }
+            .spanSm9 {
+                grid-column: span 9;
+            }
+            .spanSm8 {
+                grid-column: span 8;
+            }
+            .spanSm7 {
+                grid-column: span 7;
+            }
+            .spanSm6 {
+                grid-column: span 6;
+            }
+            .spanSm5 {
+                grid-column: span 5;
+            }
+            .spanSm4 {
+                grid-column: span 4;
+            }
+            .spanSm3 {
+                grid-column: span 3;
+            }
+            .spanSm2 {
+                grid-column: span 2;
+            }
+            .spanSm1 {
+                grid-column: span 1;
+            }
+            .spanMd11, .span11 {
+                grid-column: span 11;
+            }
+            .spanMd10, .span10 {
+                grid-column: span 10;
+            }
+            .spanMd9, .span9 {
+                grid-column: span 9;
+            }
+            .spanMd8, .span8 {
+                grid-column: span 8;
+            }
+            .spanMd7, .span7 {
+                grid-column: span 7;
+            }
+            .spanMd6, .span6 {
+                grid-column: span 6;
+            }
+            .spanMd5, .span5 {
+                grid-column: span 5;
+            }
+            .spanMd4, .span4 {
+                grid-column: span 4;
+            }
+            .spanMd3, .span3 {
+                grid-column: span 3;
+            }
+            .spanMd2, .span2 {
+                grid-column: span 2;
+            }
+            .spanMd1, .span1 {
+                grid-column: span 1;
+            }
+            .spanLg11 {
+                grid-column: span 11;
+            }
+            .spanLg10 {
+                grid-column: span 10;
+            }
+            .spanLg9 {
+                grid-column: span 9;
+            }
+            .spanLg8 {
+                grid-column: span 8;
+            }
+            .spanLg7 {
+                grid-column: span 7;
+            }
+            .spanLg6 {
+                grid-column: span 6;
+            }
+            .spanLg5 {
+                grid-column: span 5;
+            }
+            .spanLg4 {
+                grid-column: span 4;
+            }
+            .spanLg3 {
+                grid-column: span 3;
+            }
+            .spanLg2 {
+                grid-column: span 2;
+            }
+            .spanLg1 {
+                grid-column: span 1;
+            }
+            .spanXl11 {
+                grid-column: span 11;
+            }
+            .spanXl10 {
+                grid-column: span 10;
+            }
+            .spanXl9 {
+                grid-column: span 9;
+            }
+            .spanXl8 {
+                grid-column: span 8;
+            }
+            .spanXl7 {
+                grid-column: span 7;
+            }
+            .spanXl6 {
+                grid-column: span 6;
+            }
+            .spanXl5 {
+                grid-column: span 5;
+            }
+            .spanXl4 {
+                grid-column: span 4;
+            }
+            .spanXl3 {
+                grid-column: span 3;
+            }
+            .spanXl2 {
+                grid-column: span 2;
+            }
+            .spanXl1 {
+                grid-column: span 1;
+            }
+        }
+        /* Lg */
+        @media screen and (min-width: 1100px) and (max-width: 1300px) {
+            .spanXs11 {
+                grid-column: span 11;
+            }
+            .spanXs10 {
+                grid-column: span 10;
+            }
+            .spanXs9 {
+                grid-column: span 9;
+            }
+            .spanXs8 {
+                grid-column: span 8;
+            }
+            .spanXs7 {
+                grid-column: span 7;
+            }
+            .spanXs6 {
+                grid-column: span 6;
+            }
+            .spanXs5 {
+                grid-column: span 5;
+            }
+            .spanXs4 {
+                grid-column: span 4;
+            }
+            .spanXs3 {
+                grid-column: span 3;
+            }
+            .spanXs2 {
+                grid-column: span 2;
+            }
+            .spanXs1 {
+                grid-column: span 1;
+            } 
+            .spanSm11 {
+                grid-column: span 11;
+            }
+            .spanSm10 {
+                grid-column: span 10;
+            }
+            .spanSm9 {
+                grid-column: span 9;
+            }
+            .spanSm8 {
+                grid-column: span 8;
+            }
+            .spanSm7 {
+                grid-column: span 7;
+            }
+            .spanSm6 {
+                grid-column: span 6;
+            }
+            .spanSm5 {
+                grid-column: span 5;
+            }
+            .spanSm4 {
+                grid-column: span 4;
+            }
+            .spanSm3 {
+                grid-column: span 3;
+            }
+            .spanSm2 {
+                grid-column: span 2;
+            }
+            .spanSm1 {
+                grid-column: span 1;
+            }
+            .spanMd11, .span11 {
+                grid-column: span 11;
+            }
+            .spanMd10, .span10 {
+                grid-column: span 10;
+            }
+            .spanMd9, .span9 {
+                grid-column: span 9;
+            }
+            .spanMd8, .span8 {
+                grid-column: span 8;
+            }
+            .spanMd7, .span7 {
+                grid-column: span 7;
+            }
+            .spanMd6, .span6 {
+                grid-column: span 6;
+            }
+            .spanMd5, .span5 {
+                grid-column: span 5;
+            }
+            .spanMd4, .span4 {
+                grid-column: span 4;
+            }
+            .spanMd3, .span3 {
+                grid-column: span 3;
+            }
+            .spanMd2, .span2 {
+                grid-column: span 2;
+            }
+            .spanMd1, .span1 {
+                grid-column: span 1;
+            }
+            .spanLg11 {
+                grid-column: span 11;
+            }
+            .spanLg10 {
+                grid-column: span 10;
+            }
+            .spanLg9 {
+                grid-column: span 9;
+            }
+            .spanLg8 {
+                grid-column: span 8;
+            }
+            .spanLg7 {
+                grid-column: span 7;
+            }
+            .spanLg6 {
+                grid-column: span 6;
+            }
+            .spanLg5 {
+                grid-column: span 5;
+            }
+            .spanLg4 {
+                grid-column: span 4;
+            }
+            .spanLg3 {
+                grid-column: span 3;
+            }
+            .spanLg2 {
+                grid-column: span 2;
+            }
+            .spanLg1 {
+                grid-column: span 1;
+            }
+        }
+        /* Md */
+        @media screen and (min-width: 960px) and (max-width: 1100px) { 
+            .spanXs11 {
+                grid-column: span 11;
+            }
+            .spanXs10 {
+                grid-column: span 10;
+            }
+            .spanXs9 {
+                grid-column: span 9;
+            }
+            .spanXs8 {
+                grid-column: span 8;
+            }
+            .spanXs7 {
+                grid-column: span 7;
+            }
+            .spanXs6 {
+                grid-column: span 6;
+            }
+            .spanXs5 {
+                grid-column: span 5;
+            }
+            .spanXs4 {
+                grid-column: span 4;
+            }
+            .spanXs3 {
+                grid-column: span 3;
+            }
+            .spanXs2 {
+                grid-column: span 2;
+            }
+            .spanXs1 {
+                grid-column: span 1;
+            }
+            .spanSm11 {
+                grid-column: span 11;
+            }
+            .spanSm10 {
+                grid-column: span 10;
+            }
+            .spanSm9 {
+                grid-column: span 9;
+            }
+            .spanSm8 {
+                grid-column: span 8;
+            }
+            .spanSm7 {
+                grid-column: span 7;
+            }
+            .spanSm6 {
+                grid-column: span 6;
+            }
+            .spanSm5 {
+                grid-column: span 5;
+            }
+            .spanSm4 {
+                grid-column: span 4;
+            }
+            .spanSm3 {
+                grid-column: span 3;
+            }
+            .spanSm2 {
+                grid-column: span 2;
+            }
+            .spanSm1 {
+                grid-column: span 1;
+            }
+            .spanMd11, .span11 {
+                grid-column: span 11;
+            }
+            .spanMd10, .span10 {
+                grid-column: span 10;
+            }
+            .spanMd9, .span9 {
+                grid-column: span 9;
+            }
+            .spanMd8, .span8 {
+                grid-column: span 8;
+            }
+            .spanMd7, .span7 {
+                grid-column: span 7;
+            }
+            .spanMd6, .span6 {
+                grid-column: span 6;
+            }
+            .spanMd5, .span5 {
+                grid-column: span 5;
+            }
+            .spanMd4, .span4 {
+                grid-column: span 4;
+            }
+            .spanMd3, .span3 {
+                grid-column: span 3;
+            }
+            .spanMd2, .span2 {
+                grid-column: span 2;
+            }
+            .spanMd1, .span1 {
+                grid-column: span 1;
+            }
+        }
+        /* Sm */
+        @media screen and (min-width: 760px) and (max-width: 960px) {
+            .spanXs11 {
+                grid-column: span 11;
+            }
+            .spanXs10 {
+                grid-column: span 10;
+            }
+            .spanXs9 {
+                grid-column: span 9;
+            }
+            .spanXs8 {
+                grid-column: span 8;
+            }
+            .spanXs7 {
+                grid-column: span 7;
+            }
+            .spanXs6 {
+                grid-column: span 6;
+            }
+            .spanXs5 {
+                grid-column: span 5;
+            }
+            .spanXs4 {
+                grid-column: span 4;
+            }
+            .spanXs3 {
+                grid-column: span 3;
+            }
+            .spanXs2 {
+                grid-column: span 2;
+            }
+            .spanXs1 {
+                grid-column: span 1;
+            }
+            .spanSm11 {
+                grid-column: span 11;
+            }
+            .spanSm10 {
+                grid-column: span 10;
+            }
+            .spanSm9 {
+                grid-column: span 9;
+            }
+            .spanSm8 {
+                grid-column: span 8;
+            }
+            .spanSm7 {
+                grid-column: span 7;
+            }
+            .spanSm6 {
+                grid-column: span 6;
+            }
+            .spanSm5 {
+                grid-column: span 5;
+            }
+            .spanSm4 {
+                grid-column: span 4;
+            }
+            .spanSm3 {
+                grid-column: span 3;
+            }
+            .spanSm2 {
+                grid-column: span 2;
+            }
+            .spanSm1 {
+                grid-column: span 1;
+            }
+        }
+        /* Xs */
+        @media screen and (max-width: 760px) {
+            .spanXs11 {
+                grid-column: span 11;
+            }
+            .spanXs10 {
+                grid-column: span 10;
+            }
+            .spanXs9 {
+                grid-column: span 9;
+            }
+            .spanXs8 {
+                grid-column: span 8;
+            }
+            .spanXs7 {
+                grid-column: span 7;
+            }
+            .spanXs6 {
+                grid-column: span 6;
+            }
+            .spanXs5 {
+                grid-column: span 5;
+            }
+            .spanXs4 {
+                grid-column: span 4;
+            }
+            .spanXs3 {
+                grid-column: span 3;
+            }
+            .spanXs2 {
+                grid-column: span 2;
+            }
+            .spanXs1 {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fullWidth">
+        <h1>Combination Grid</h1>
+        <div class="container">
+            <div class="card spanSm12">spanSm12</div>
+            <div class="card spanSm11">spanSm11</div>
+            <div class="card spanSm1">spanSm1</div>
+            <div class="card spanSm10">spanSm10</div>
+            <div class="card spanSm2">spanSm2</div>
+            <div class="card spanSm9">spanSm9</div>
+            <div class="card spanSm3">spanSm3</div>
+            <div class="card spanSm8">spanSm8</div>
+            <div class="card spanSm4">spanSm4</div>
+            <div class="card spanSm8">spanSm7</div>
+            <div class="card spanSm4">spanSm5</div>
+            <div class="card spanSm6">spanSm6</div>
+            <div class="card spanSm6">spanSm6</div> 
+            <div class="card spanSm4">spanSm4</div> 
+            <div class="card spanSm4">spanSm4</div> 
+            <div class="card spanSm4">spanSm4</div> 
+            <div class="card spanSm3">spanSm3</div> 
+            <div class="card spanSm3">spanSm3</div> 
+            <div class="card spanSm3">spanSm3</div> 
+            <div class="card spanSm3">spanSm3</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+        </div>
+        <h1>All Grid span options</h1>
+        <div class="container">
+            <div class="card span12">span12, spanXl12, spanLg12, spanMd12, spanSm12, spanXs12</div>
+            <div class="card span11">span11</div>
+            <div class="card spanXl11">spanXl11</div>
+            <div class="card spanLg11">spanLg11</div>
+            <div class="card spanMd11">spanMd11</div>
+            <div class="card spanSm11">spanSm11</div>
+            <div class="card spanXs11">spanXs11</div>
+            <div class="card span10">span10</div>
+            <div class="card spanXl10">spanXl10</div>
+            <div class="card spanLg10">spanLg10</div>
+            <div class="card spanMd10">spanMd10</div>
+            <div class="card spanSm10">spanSm10</div>
+            <div class="card spanXs10">spanXs10</div>
+            <div class="card span9">span9</div>
+            <div class="card spanXl9">spanXl9</div>
+            <div class="card spanLg9">spanLg9</div>
+            <div class="card spanMd9">spanMd9</div>
+            <div class="card spanSm9">spanSm9</div>
+            <div class="card spanXs9">spanXs9</div>
+            <div class="card span8">span8</div>
+            <div class="card spanXl8">spanXl8</div>
+            <div class="card spanLg8">spanLg8</div>
+            <div class="card spanMd8">spanMd8</div>
+            <div class="card spanSm8">spanSm8</div>
+            <div class="card spanXs8">spanXs8</div>
+            <div class="card span7">span7</div>
+            <div class="card spanXl7">spanXl7</div>
+            <div class="card spanLg7">spanLg7</div>
+            <div class="card spanMd7">spanMd7</div>
+            <div class="card spanSm7">spanSm7</div>
+            <div class="card spanXs7">spanXs7</div>
+            <div class="card span6">span6</div>
+            <div class="card spanXl6">spanXl6</div>
+            <div class="card spanLg6">spanLg6</div>
+            <div class="card spanMd6">spanMd6</div>
+            <div class="card spanSm6">spanSm6</div>
+            <div class="card spanXs6">spanXs6</div>
+            <div class="card span5">span5</div>
+            <div class="card spanXl5">spanXl5</div>
+            <div class="card spanLg5">spanLg5</div>
+            <div class="card spanMd5">spanMd5</div>
+            <div class="card spanSm5">spanSm5</div>
+            <div class="card spanXs5">spanXs5</div>
+            <div class="card span4">span4</div>
+            <div class="card spanXl4">spanXl4</div>
+            <div class="card spanLg4">spanLg4</div>
+            <div class="card spanMd4">spanMd4</div>
+            <div class="card spanSm4">spanSm4</div>
+            <div class="card spanXs4">spanXs4</div>
+            <div class="card span3">span3</div>
+            <div class="card spanXl3">spanXl3</div>
+            <div class="card spanLg3">spanLg3</div>
+            <div class="card spanMd3">spanMd3</div>
+            <div class="card spanSm3">spanSm3</div>
+            <div class="card spanXs3">spanXs3</div>
+            <div class="card span2">span2</div>
+            <div class="card spanXl2">spanXl2</div>
+            <div class="card spanLg2">spanLg2</div>
+            <div class="card spanMd2">spanMd2</div>
+            <div class="card spanSm2">spanSm2</div>
+            <div class="card spanXs2">spanXs2</div>
+            <div class="card span1">span1</div>
+            <div class="card spanXl1">spanXl1</div>
+            <div class="card spanLg1">spanLg1</div>
+            <div class="card spanMd1">spanMd1</div>
+            <div class="card spanSm1">spanSm1</div>
+            <div class="card spanXs1">spanXs1</div>
+        </div>
+        <h1>Row Span, and dense</h1>
+        <div class="container dense">
+            <div class="card spanSm6 rowSpan5">spanSm6 rowSpan5</div>
+            <div class="card spanSm6">spanSm6</div> 
+            <div class="card spanSm4">spanSm4</div> 
+            <div class="card spanSm4">spanSm4</div> 
+            <div class="card spanSm4">spanSm4</div> 
+            <div class="card spanSm3">spanSm3</div> 
+            <div class="card spanSm3 rowSpan4">spanSm3 rowSpan4</div> 
+            <div class="card spanSm3">spanSm3</div> 
+            <div class="card spanSm3">spanSm3</div> 
+            <div class="card spanSm2 rowSpan3">spanSm2 rowSpan3</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm2">spanSm2</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+            <div class="card spanSm1">spanSm1</div> 
+        </div>
+        <h1>Column Centered and Offset Columns</h1>
+        <div class="container">
+            <div class="spanSm3 spanSpacer "></div>
+            <div class="card spanSm6 ">spanSm6</div>
+            <div class="spanSm3 spanSpacer"></div>
+            <div class="spanSm2 spanSpacer"></div>
+            <div class="card spanSm8 ">spanSm8</div>
+            <div class="spanSm2 spanSpacer"></div>
+            <div class="spanSm4 spanSpacer"></div>
+            <div class="card spanSm8 ">spanSm8</div>
+        </div>
+        <h1>Multiple Classes</h1>
+        <div class="container">
+            <div class="card spanLg6 spanMd4 spanSm2">spanLg6 spanMd4 spanSm2</div>
+            <div class="card spanLg6 spanMd8 spanSm10">spanLg6 spanMd8 spanSm10</div>
+            <div class="card spanXl8 spanMd3">spanXl8 spanMd3</div>
+            <div class="card spanXl4 spanMd9">spanXl4 spanMd9</div>
+            <div class="card spanSm8 spanMd3 spanXs6">spanSm8 spanMd3 spanXs6</div>
+            <div class="card spanSm4 spanMd9 spanXs6">spanSm4 spanMd9 spanXs6</div>
+            <div class="card spanSm7 spanXs6">spanSm7 spanXs6</div>
+            <div class="card spanSm5 spanXs6">spanSm5 spanXs6</div>
+            <div class="card spanMd4 spanXs6">spanMd4 spanXs6</div>
+            <div class="card spanMd8 spanXs6">spanMd8 spanXs6</div>
+            <div class="card spanXl4 spanXs8">spanXl4 spanXs8</div>
+            <div class="card spanXl8 spanXs4">spanXl8 spanXs4</div>
+        </div>
+    </div>
+    <h1>Dashboard Layout</h1>
+    <div class="dashboard-container">
+        <div class="dashboard">
+            <div class="container">
+                <div class="card spanLg6 spanMd4 spanSm2">spanLg6 spanMd4 spanSm2</div>
+                <div class="card spanLg6 spanMd8 spanSm10">spanLg6 spanMd8 spanSm10</div>
+                <div class="card spanXl8 spanMd3">spanXl8 spanMd3</div>
+                <div class="card spanXl4 spanMd9">spanXl4 spanMd9</div>
+                <div class="card spanSm8 spanMd3 spanXs6">spanSm8 spanMd3 spanXs6</div>
+                <div class="card spanSm4 spanMd9 spanXs6">spanSm4 spanMd9 spanXs6</div>
+                <div class="card spanSm7 spanXs6">spanSm7 spanXs6</div>
+                <div class="card spanSm5 spanXs6">spanSm5 spanXs6</div>
+                <div class="card spanMd4 spanXs6">spanMd4 spanXs6</div>
+                <div class="card spanMd8 spanXs6">spanMd8 spanXs6</div>
+                <div class="card spanXl4 spanXs8">spanXl4 spanXs8</div>
+                <div class="card spanXl8 spanXs4">spanXl8 spanXs4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
